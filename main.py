@@ -4,14 +4,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-smt_server = os.getenv('SMTP_SERVER')
-port = os.getenv('SMTP_PORT')
+smt_server = os.getenv('YANDEX_SMTP_SERVER')
+port = os.getenv('YANDEX_SMTP_PORT')
 
-login = os.getenv('LOGIN')
-password = os.getenv('PASSWORD')
+login = os.getenv('YANDEX_LOGIN')
+password = os.getenv('YANDEX_PASSWORD')
 
-sender = os.getenv('LOGIN')
-receiver = os.getenv('RECEIVER')
+sender = os.getenv('YANDEX_LOGIN')
+receiver = os.getenv('YANDEX_RECEIVER')
 
 website = '%website%'
 friend_name = '%friend_name%'
