@@ -2,10 +2,11 @@ import smtplib, ssl
 import os
 from dotenv import load_dotenv
 
+
 load_dotenv()
 
-smt_server = os.getenv('YANDEX_SMTP_SERVER')
-port = os.getenv('YANDEX_SMTP_PORT')
+SMTP_SERVER = 'smtp.yandex.ru'
+SMTP_PORT = 465
 
 login = os.getenv('YANDEX_LOGIN')
 password = os.getenv('YANDEX_PASSWORD')
@@ -45,6 +46,6 @@ message = message.encode("UTF-8")
 
 context = ssl.create_default_context()
 
-with smtplib.SMTP_SSL(smt_server, port, context=context) as server:
+with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT, context=context) as server:
     server.login(login, password)
     server.sendmail(sender, receiver, message)
